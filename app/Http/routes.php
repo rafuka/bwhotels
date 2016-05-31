@@ -12,12 +12,16 @@
 */
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', function(){
+        return 'hai';
+    });
 
-    Route::get('/', function () {
-        return view('welcome');
+    Route::get('/hola', function() {
+        return 'HOLA';
     });
 });
+
 
 
 # -----------------------------------
