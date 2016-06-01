@@ -11,15 +11,29 @@
 |
 */
 
+use App\Hotel;
+
+Route::get('/ex1', function() {
+        $orders = \App\Order::with('hotel')->get();
+        foreach($orders as $order) {
+            dump($order->hotel->name);
+        }
+        
+    });
+
+Route::get('/ex2', function() {
+        $hotel = new Hotel();
+
+        dd($hotel);
+        
+    });
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/', function(){
         return 'hai';
     });
 
-    Route::get('/hola', function() {
-        return 'HOLA';
-    });
+    
 });
 
 

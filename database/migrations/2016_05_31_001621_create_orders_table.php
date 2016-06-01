@@ -14,12 +14,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hotel_name');
-            $table->string('hotel_address');
+            $table->timestamps();
             $table->integer('lug_num');
             $table->string('terminal');
             $table->string('time');
-            $table->timestamps();
+            $table->string('status')->default('pending');
+            
         });
     }
 
