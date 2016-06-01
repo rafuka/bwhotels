@@ -33,6 +33,7 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected $username = 'username';
 
 
     /**
@@ -69,6 +70,8 @@ class AuthController extends Controller
     {
         return User::create([
             'username' => $data['username'],
+            'email'    => $data['email'],
+            'tlf'      => $data['tlf'],
             'password' => bcrypt($data['password']),
         ]);
     }

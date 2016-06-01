@@ -92,9 +92,57 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'required' => 'An e-mail address is required.',
+            'email'    => 'Please provide a valid e-mail address.',
         ],
+
+        'username' => [
+            'required' => 'A username is required.',
+            'min'      => 'Username must be at least 5 characters long.',
+            'unique'   => 'The username you provided already exists.',
+        ],
+
+        'tlf' => [
+            'required' => 'A telephone number is required.',
+            'numeric'  => 'Phone number must be formed by numeric characters only.',
+        ],
+
+        'password' => [
+            'required' => 'A password is required.',
+            'min'      => 'Password must be at least 7 characters long.',
+        ],
+
+        'password_confirmation' => [
+            'required' => 'Please confirm password.',
+            'confirmed' => 'Please make sure passwords match.',
+
+        ],
+
+        'name' => [
+            'required' => 'A name for the hotel is required.',
+            'min' => 'Hotel\'s name must be at least 5 characters long.',
+
+        ],
+
+        'address' => [
+            'required' => 'The hotel\'s address is required.',
+            'min'      => 'The hotel\'s address must be at least 8 characters long.'
+       
+        ],
+
+        'hab_num' => [
+            'required' => 'Number of rooms is required.',
+            'numeric'  => 'Please provide a numeric value for the number of rooms.',
+
+        ],
+
+        'stars' => [
+            'required'  => 'Numbers of stars of the hotel is required.',
+            'numeric'   => 'Please provide a numeric value for the number of stars.',
+        ],
+
+
     ],
 
     /*

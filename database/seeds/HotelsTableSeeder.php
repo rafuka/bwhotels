@@ -11,6 +11,7 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
+        $user_id = \App\User::where('id', '=', '2')->pluck('id')->first();
         DB::table('hotels')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -18,8 +19,10 @@ class HotelsTableSeeder extends Seeder
         	'address'	 => 'Carrer lepanto nro 25',
         	'hab_num'	 => 124,
         	'stars'		 => 4,
+            'user_id'    => $user_id,
         ]);
 
+        $user_id = \App\User::where('id', '=', '3')->pluck('id')->first();
         DB::table('hotels')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -27,8 +30,10 @@ class HotelsTableSeeder extends Seeder
         	'address'	 => 'Carrer mallorca nro 181',
         	'hab_num'	 => 87,
         	'stars'		 => 2,
+            'user_id'    => $user_id,
         ]);
 
+        $user_id = \App\User::where('id', '=', '4')->pluck('id')->first();
         DB::table('hotels')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -36,6 +41,7 @@ class HotelsTableSeeder extends Seeder
         	'address'	 => 'Carrer l\'escorial nro 44',
         	'hab_num'	 => 50,
         	'stars'		 => 3,
+            'user_id'    => $user_id,
         ]);
     }
 }

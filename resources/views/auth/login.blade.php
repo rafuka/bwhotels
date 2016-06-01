@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.master')
 
 
 @section('title')
@@ -12,14 +12,20 @@
 
 
 @section('content')
-	<form>
-		<label for="username">Username:</label>
-		<input type="text" name="username" id="username">
+	<form action="/login" method="POST">
+		{{ csrf_field() }}
 
-		<label for="password">Password:</label>
-		<input type="password" name="password" id="password">
+		<div class="form-group">
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username">
+		</div>
 
-		<input type="submit">
+		<div class="form-group">
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Log In</button>
 	</form>
 @stop
 

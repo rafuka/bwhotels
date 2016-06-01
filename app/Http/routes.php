@@ -28,14 +28,24 @@ Route::get('/ex2', function() {
         
     });
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/', function(){
-        return 'hai';
-    });
 
-    
+Route::get('/ex3', function() {
+    $user = new \App\User;
+    $user->username = 'bawlz';
+    $user->email = 'bawlz@offire.com';
+    $user->password = bcrypt('123456');
+    $user->tlf = '2843975435';
+
+    $user->save();
+
+    $hotel = new \App\Hotel;
+    $hotel->name = 'Hotelejo';
+    $hotel->address = 'Calle tus nalgas nro 67';
+    $hotel->hab_num = 82;
+    $hotel->stars = 3;
+    $hotel->user()->associate($user);
+    // $hotel->user_id = $user->id; 
 });
-
 
 
 # -----------------------------------
@@ -45,13 +55,29 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 
-Route::get('/register', 'Auth\AuthController@getRegister');
-Route::post('/register', 'Auth\AuthController@postRegister');
+# Route::get('/register', 'Auth\AuthController@getRegister');
+# Route::post('/register', 'Auth\AuthController@postRegister');
 
 Route::get('/logout', 'Auth\AuthController@logout');
 
 
+# -----------------------------------
+# Main Routes
+# -----------------------------------
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', 'MainController@getIndex');
+
+
+    Route::get('/register', 'AdminController@getRegHotel');
+    Route::post('/register', 'AdminController@postRegHotel');
+    
+});
+
+
+# ------------------------------------
+# Test Routes
+# ------------------------------------
 
 if (App::environment('local')) {
 
@@ -89,6 +115,27 @@ Route::get('/debug', function() {
     echo '</pre>';
 
 });
+
+    Route::get('/loginstatus', function () {
+        $user = Auth::user();
+
+        if($user) {
+            echo 'You are logged in. <br>';
+            if($user->is_admin == true) {
+                echo 'You are Admin';
+            }
+            else {
+                echo 'You are not admin.';
+            }
+            dump($user->toArray());
+        }
+        else {
+            echo 'You are not logged in.';
+        }
+
+        $users = \App\User::all()->toArray();
+        dump($users);
+    });
 
 }
 
