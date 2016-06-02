@@ -66,8 +66,8 @@ Route::get('/logout', 'Auth\AuthController@logout');
 # -----------------------------------
 
 Route::group(['middleware' => 'auth'], function() {
+   
     Route::get('/', 'MainController@getIndex');
-
 
     Route::get('/register', 'AdminController@getRegHotel');
     Route::post('/register', 'AdminController@postRegHotel');

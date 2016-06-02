@@ -111,11 +111,12 @@ return [
         'password' => [
             'required' => 'A password is required.',
             'min'      => 'Password must be at least 7 characters long.',
+            'confirmed' => 'Please make sure passwords match.',
         ],
 
         'password_confirmation' => [
             'required' => 'Please confirm password.',
-            'confirmed' => 'Please make sure passwords match.',
+            
 
         ],
 

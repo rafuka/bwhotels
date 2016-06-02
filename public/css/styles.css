@@ -1,0 +1,54 @@
+form {
+	max-width: 400px;
+	min-width: 300px;
+	width: 100%;
+	margin: 20px auto;
+}
+
+fieldset {
+	margin: 20px 0px;
+}
+
+.error {
+	color:red;
+	font-size: .9em;
+}
+
+.panel-heading h1 {
+	text-align: center;
+}
+
+header {
+	background-color: rgb(48, 48, 132);
+}
+
+.logo-wrap {
+	display: inline-block;
+}
+
+#logo {
+	width: 100px;
+	height: auto;
+	margin: 5px 0px;
+}
+
+nav {
+	display: inline-block;
+	float:right;
+	margin: 0;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	list-style: none;
+	display: inline-block;
+
+}
+
+.panel {
+	margin-top: 50px;
+}
