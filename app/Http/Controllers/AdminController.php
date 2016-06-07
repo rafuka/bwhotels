@@ -11,7 +11,7 @@ class AdminController extends Controller
     public function getRegHotel() {
     	$user = \Auth::user();
     	if($user->is_admin == true) {
-    		return view('hotelreg')->with('user', $user->toArray());
+    		return view('hotelreg');
     	}
     	else {
     		return redirect('/');

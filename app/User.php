@@ -27,4 +27,5 @@ class User extends Authenticatable
     public function hotel() {
         return $this->hasOne('\App\Hotel');
     }
+
 }

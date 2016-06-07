@@ -15,6 +15,8 @@ class OrdersTableSeeder extends Seeder
         DB::table('orders')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'John McLovin',
+            'id_num'     => '5304907',
         	'lug_num'    => 3,
             'terminal'   => 'T2',
             'time'       => '17:30',
@@ -25,6 +27,8 @@ class OrdersTableSeeder extends Seeder
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Ms. Rosemary Bawlz',
+            'id_num'     => '5304907',
             'lug_num'    => 2,
             'terminal'   => 'T1',
             'time'       => '15:30',
@@ -36,6 +40,8 @@ class OrdersTableSeeder extends Seeder
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Ralphie From The Plains',
+            'id_num'     => '5304907',
             'lug_num'    => 4,
             'terminal'   => 'T1',
             'time'       => '19:00',
@@ -46,6 +52,8 @@ class OrdersTableSeeder extends Seeder
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Ada Lovelace',
+            'id_num'     => '5304907',
             'lug_num'    => 1,
             'terminal'   => 'T1',
             'time'       => '17:00',
@@ -57,10 +65,51 @@ class OrdersTableSeeder extends Seeder
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Abe Lincoln',
+            'id_num'     => '5304907',
             'lug_num'    => 3,
             'terminal'   => 'T2',
             'time'       => '20:30',
             'status'     => 'pending',
+            'hotel_id'   => $hotel_id,
+        ]);
+
+        $hotel_id = \App\Hotel::where('id', '=', '2')->pluck('id')->first();
+        DB::table('orders')->insert([
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Chichi Peralta',
+            'id_num'     => '243245B',
+            'lug_num'    => 5,
+            'terminal'   => 'T2',
+            'time'       => '19:30',
+            'status'     => 'pending',
+            'hotel_id'   => $hotel_id,
+        ]);
+
+        $hotel_id = \App\Hotel::where('id', '=', '3')->pluck('id')->first();
+        DB::table('orders')->insert([
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Lupe Bagwings',
+            'id_num'     => '76978A',
+            'lug_num'    => 2,
+            'terminal'   => 'T2',
+            'time'       => '20:30',
+            'status'     => 'pending',
+            'hotel_id'   => $hotel_id,
+        ]);
+
+        $hotel_id = \App\Hotel::where('id', '=', '3')->pluck('id')->first();
+        DB::table('orders')->insert([
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'client_name' => 'Filomena Rodriguez',
+            'id_num'     => '78969876',
+            'lug_num'    => 3,
+            'terminal'   => 'T1',
+            'time'       => '16:30',
+            'status'     => 'delivered',
             'hotel_id'   => $hotel_id,
         ]);
     }

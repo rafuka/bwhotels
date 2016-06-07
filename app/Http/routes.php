@@ -14,10 +14,8 @@
 use App\Hotel;
 
 Route::get('/ex1', function() {
-        $orders = \App\Order::with('hotel')->get();
-        foreach($orders as $order) {
-            dump($order->hotel->name);
-        }
+        $user = \App\User::find(2);
+        dd($user->hotel->order);
         
     });
 
@@ -69,9 +67,14 @@ Route::group(['middleware' => 'auth'], function() {
    
     Route::get('/', 'MainController@getIndex');
 
+    Route::get('/neworder', 'MainController@getNewOrder');
+    Route::post('/neworder', 'MainController@postNewOrder');
+
     Route::get('/register', 'AdminController@getRegHotel');
     Route::post('/register', 'AdminController@postRegHotel');
     
+    
+
 });
 
 

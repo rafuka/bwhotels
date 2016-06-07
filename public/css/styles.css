@@ -19,7 +19,7 @@ fieldset {
 }
 
 header {
-	background-color: rgb(48, 48, 132);
+	background-color: #29A6AB;
 }
 
 .logo-wrap {
@@ -51,4 +51,8 @@ nav ul li {
 
 .panel {
 	margin-top: 50px;
+}
+
+footer {
+	text-align:center;
 }

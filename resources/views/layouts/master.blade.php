@@ -22,11 +22,11 @@
 		</div>
 		<nav class="nav-bar">
 			<ul>
-				@if(isset($user) and $user['is_admin'] == true)
-					<li><a href="/">Dashboard</a></li>
-					<li><a href="/register">Register</a></li>
-				@endif
 				@if(\Auth::check())
+					@if(\Auth::user()->is_admin)
+						<li><a href="/">Dashboard</a></li>
+						<li><a href="/register">Register</a></li>
+					@endif
 					<li><a href="/logout">Log Out</a></li>
 				@endif
 			</ul>
