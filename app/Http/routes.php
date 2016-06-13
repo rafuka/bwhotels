@@ -73,6 +73,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/register', 'AdminController@getRegHotel');
     Route::post('/register', 'AdminController@postRegHotel');
     
+    Route::get('/hotels/{id?}', 'AdminController@getHotelOrders');
+
+    Route::get('/order/confirm/{id?}', 'AdminController@getOrderConfirm');
     
 
 });

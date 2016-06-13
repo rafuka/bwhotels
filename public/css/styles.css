@@ -20,6 +20,8 @@ fieldset {
 
 header {
 	background-color: #29A6AB;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+	margin-bottom: 40px;
 }
 
 .logo-wrap {
@@ -36,6 +38,8 @@ nav {
 	display: inline-block;
 	float:right;
 	margin: 0;
+	margin: 40px 30px;
+
 }
 
 nav ul {
@@ -49,10 +53,54 @@ nav ul li {
 
 }
 
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 2px;
+}
+
+nav ul li a:hover {
+	background-color: white;
+	text-decoration: none;
+	color: #29A6AB;
+	
+}
+
+nav ul li a.current {
+	
+	border: 1px solid white;
+}
+
 .panel {
 	margin-top: 50px;
 }
 
 footer {
 	text-align:center;
+}
+
+
+
+th, td {
+	padding: 5px 10px;
+}
+
+td {
+	border: 1px solid rgba(100,100,100,0.1);
+}
+
+td.pending {
+	background-color: yellow;
+}
+
+td.delivered {
+	background-color: green;
+	color: white;
+}
+
+td.cancelled {
+	background-color: red;
+	color: white;
 }

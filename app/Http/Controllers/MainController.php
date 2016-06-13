@@ -12,7 +12,15 @@ class MainController extends Controller
     	$user = \Auth::user();
 
     	if($user->is_admin) {
-    		return view('admindashboard');
+
+    		$hotels = \App\Hotel::all();
+
+            
+
+            #TODO: get number of orders for each hotel and number of pending orders for each hotel
+            #      and pass them to admindashboard view.
+
+    		return view('admindashboard')->with('hotels', $hotels);
     	}
     	else {
 
@@ -30,7 +38,33 @@ class MainController extends Controller
     	return view('neworderform');
     }
 
-    public function postNewOrder() {
-    	echo 'hai';
+    public function postNewOrder(Request $request) {
+    	
+    	$this->validate($request, [
+    		'client_name' => 'required',
+    		'id_num' 	  => 'required',
+    		'contact'	  => 'required',
+    		'lug_num'	  => 'required',
+    		'terminal'    => 'required',
+    		'time'		  => 'required',
+
+    	]);
+    	
+    	$order = new \App\Order;
+
+    	$order->client_name = $request->input('client_name');
+    	$order->id_num = $request->input('id_num');
+    	$order->contact = $request->input('contact');
+    	$order->lug_num = $request->input('lug_num');
+    	$order->terminal = $request->input('terminal');
+    	$order->time = $request->input('time');
+    	$order->hotel()->associate(\Auth::user()->hotel);
+    	
+
+    	$order->save();
+
+    	\Session::flash('flash_message', 'New Order placed successfully!');
+
+    	return redirect('/');
     }
 }

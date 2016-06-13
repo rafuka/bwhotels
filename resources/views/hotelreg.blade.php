@@ -1,3 +1,4 @@
+<?php $currpage = 'register'; ?>
 @extends('layouts.master')
 
 
@@ -18,7 +19,7 @@
 			<h1>Registering new hotel</h1>
 		</div>
 		<div class="panel-body">
-			<form  action="/register" method="POST">
+			<form action="/register" method="POST">
 
 				{{ csrf_field() }}
 				<fieldset>

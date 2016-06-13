@@ -20,6 +20,10 @@
 					<input class="form-control" type="text" name="id_num" id="id_num" value="{{ old('id_num') }}">
 				</div>
 				<div class="form-group">
+					<label for="contact">e-mail or phone number</label>
+					<input class="form-control" type="text" name="contact" id="contact" value="{{ old('contact') }}">
+				</div>
+				<div class="form-group">
 					<label for="lug_num">Number of Bags</label>
 					<input class="form-control" type="number" name="lug_num" id="lug_num" >
 				</div>

@@ -12,11 +12,13 @@
 
 
 @section('content')
+	<div class="jumbotron">
 	<h2>{{ $hotel['name'] }}</h2>
-	<a href="/neworder">Create new order</a>
-	<h3>List of orders</h3>
-	<table>
-		<caption>Orders</caption>
+	<a class="btn btn-primary" href="/neworder">Create new order</a>
+	</div>
+
+	<table class="panel panel-default">
+		<caption class="panel-heading">List of Orders</caption>
 		<thead>
 			<th>Date created</th>
 			<th>Client Name</th>

@@ -6,10 +6,6 @@
 @stop
 
 
-@section('header')
-	<p>Bagwings</p>
-@stop
-
 
 @section('content')
 	<div class="panel panel-default">
