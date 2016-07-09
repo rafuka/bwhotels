@@ -11,7 +11,7 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        $hotel_id = \App\Hotel::where('id', '=', '1')->pluck('id')->first();
+        $hotel_id = \App\Hotel::where('name', '=', 'Primer hotel')->pluck('id')->first();
         DB::table('orders')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -38,7 +38,7 @@ class OrdersTableSeeder extends Seeder
             'hotel_id'   => $hotel_id,
         ]);
 
-        $hotel_id = \App\Hotel::where('id', '=', '2')->pluck('id')->first();
+        $hotel_id = \App\Hotel::where('name', '=', 'Segundo hotel')->pluck('id')->first();
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -65,7 +65,7 @@ class OrdersTableSeeder extends Seeder
             'hotel_id'   => $hotel_id,
         ]);
 
-        $hotel_id = \App\Hotel::where('id', '=', '3')->pluck('id')->first();
+        $hotel_id = \App\Hotel::where('name', '=', 'Tercer hotel')->pluck('id')->first();
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -79,7 +79,7 @@ class OrdersTableSeeder extends Seeder
             'hotel_id'   => $hotel_id,
         ]);
 
-        $hotel_id = \App\Hotel::where('id', '=', '2')->pluck('id')->first();
+        $hotel_id = \App\Hotel::where('name', '=', 'Segundo hotel')->pluck('id')->first();
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -93,7 +93,7 @@ class OrdersTableSeeder extends Seeder
             'hotel_id'   => $hotel_id,
         ]);
 
-        $hotel_id = \App\Hotel::where('id', '=', '3')->pluck('id')->first();
+        $hotel_id = \App\Hotel::where('name', '=', 'Tercer hotel')->pluck('id')->first();
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -107,7 +107,7 @@ class OrdersTableSeeder extends Seeder
             'hotel_id'   => $hotel_id,
         ]);
 
-        $hotel_id = \App\Hotel::where('id', '=', '3')->pluck('id')->first();
+        
         DB::table('orders')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
