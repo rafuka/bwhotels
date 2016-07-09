@@ -89,6 +89,8 @@ if (config('app.debug')) {
 
 Route::get('/debug', function() {
 
+    echo bcrypt("bagwings2016barcelona");
+
     echo '<pre>';
 
     echo '<h1>Environment</h1>';
@@ -112,7 +114,7 @@ Route::get('/debug', function() {
         $results = DB::select('SHOW DATABASES;');
         echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
         echo "<br><br>Your Databases:<br><br>";
-        
+
         dd($results);
     }
     catch (Exception $e) {
