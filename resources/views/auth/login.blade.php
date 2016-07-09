@@ -19,6 +19,9 @@
 				<div class="form-group">
 					<label for="username">Username:</label>
 					<input class="form-control" type="text" name="username" id="username">
+					@if($errors->first('username'))
+						<div class="error">{{ $errors->first('username') }}</div>
+					@endif
 				</div>
 
 				<div class="form-group">
