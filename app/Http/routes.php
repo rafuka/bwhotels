@@ -13,38 +13,6 @@
 
 use App\Hotel;
 
-Route::get('/ex1', function() {
-        $user = \App\User::find(2);
-        dd($user->hotel->order);
-        
-    });
-
-Route::get('/ex2', function() {
-        $hotel = new Hotel();
-
-        dd($hotel);
-        
-    });
-
-
-Route::get('/ex3', function() {
-    $user = new \App\User;
-    $user->username = 'bawlz';
-    $user->email = 'bawlz@offire.com';
-    $user->password = bcrypt('123456');
-    $user->tlf = '2843975435';
-
-    $user->save();
-
-    $hotel = new \App\Hotel;
-    $hotel->name = 'Hotelejo';
-    $hotel->address = 'Calle tus nalgas nro 67';
-    $hotel->hab_num = 82;
-    $hotel->stars = 3;
-    $hotel->user()->associate($user);
-    // $hotel->user_id = $user->id; 
-});
-
 
 # -----------------------------------
 # Authentication
@@ -89,7 +57,7 @@ if (config('app.debug')) {
 
 Route::get('/debug', function() {
 
-    echo bcrypt("bagwings2016barcelona");
+
 
     echo '<pre>';
 
