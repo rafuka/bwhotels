@@ -112,7 +112,7 @@ Route::get('/debug', function() {
         $results = DB::select('SHOW DATABASES;');
         echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
         echo "<br><br>Your Databases:<br><br>";
-        print_r($results);
+        dd($results);
     }
     catch (Exception $e) {
         echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n";
