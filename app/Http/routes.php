@@ -85,7 +85,7 @@ Route::group(['middleware' => 'auth'], function() {
 # Test Routes
 # ------------------------------------
 
-if (App::environment('local')) {
+if (config('app.debug')) {
 
 Route::get('/debug', function() {
 
