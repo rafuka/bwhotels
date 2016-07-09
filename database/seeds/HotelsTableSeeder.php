@@ -11,7 +11,7 @@ class HotelsTableSeeder extends Seeder
      */
     public function run()
     {
-        $user_id = \App\User::where('id', '=', '2')->pluck('id')->first();
+        $user_id = \App\User::where('username', '=', 'yadayada')->pluck('id')->first();
         DB::table('hotels')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -22,7 +22,7 @@ class HotelsTableSeeder extends Seeder
             'user_id'    => $user_id,
         ]);
 
-        $user_id = \App\User::where('id', '=', '3')->pluck('id')->first();
+        $user_id = \App\User::where('username', '=', 'nancy')->pluck('id')->first();
         DB::table('hotels')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -33,7 +33,7 @@ class HotelsTableSeeder extends Seeder
             'user_id'    => $user_id,
         ]);
 
-        $user_id = \App\User::where('id', '=', '4')->pluck('id')->first();
+        $user_id = \App\User::where('username', '=', 'miramar')->pluck('id')->first();
         DB::table('hotels')->insert([
         	'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         	'updated_at' => Carbon\Carbon::now()->toDateTimeString(),

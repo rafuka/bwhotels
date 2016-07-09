@@ -112,6 +112,7 @@ Route::get('/debug', function() {
         $results = DB::select('SHOW DATABASES;');
         echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
         echo "<br><br>Your Databases:<br><br>";
+        
         dd($results);
     }
     catch (Exception $e) {
