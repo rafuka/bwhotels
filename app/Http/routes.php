@@ -13,6 +13,14 @@
 
 use App\Hotel;
 
+Route::get('/email', function() {
+    \Mail::send('emails.orderemail', [], function($message) {
+        $message->to('rafuk89@gmail.com')
+        ->subject('Testing Mail');
+    });
+
+    return 'message sent.';
+});
 
 # -----------------------------------
 # Authentication
