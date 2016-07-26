@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" >
+	<meta name="robots" content="noindex,nofollow"/>
 
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.min.css') }}" >
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap-theme.css') }}" >
@@ -16,7 +17,7 @@
 	<header class="container-fluid">
 		@yield('header')
 		<div class="logo-wrap">
-			<a href="http://bwhotels.loc">
+			<a href="http://hoteles.bagwings.com">
 				<img id="logo" src="{{ URL::asset('img/logo.png') }}" title="Bagwings Logo." alt="Logo">
 			</a>
 		</div>

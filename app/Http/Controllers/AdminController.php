@@ -61,35 +61,39 @@ class AdminController extends Controller
     }
 
     public function getHotelOrders($id) {
-        $orders = \App\Order::where('hotel_id', $id)->get();
 
-        $orders_pending = [];
-        $orders_delivered = [];
-        $orders_cancelled = [];
+        $user = \Auth::user();
+        if($user->is_admin == true) {
+            
+            $orders = \App\Order::where('hotel_id', $id)->get();
 
-        foreach ($orders as $order) {
-            if ($order->status == 'pending') {
-                $orders_pending[] = $order;
+            $orders_pending = [];
+            $orders_delivered = [];
+            $orders_cancelled = [];
+
+            foreach ($orders as $order) {
+                if ($order->status == 'pending') {
+                    $orders_pending[] = $order;
+                }
+                else if ($order->status == 'delivered') {
+                    $orders_delivered[] = $order;
+                }
+                else {
+                    $orders_cancelled[] = $order;
+                }
             }
-            else if ($order->status == 'delivered') {
-                $orders_delivered[] = $order;
-            }
-            else {
-                $orders_cancelled[] = $order;
-            }
+
+            $hotel_name = \App\Hotel::find($id)->name;
+
+            return view('adminhoteldash')->with('orders', $orders)->with('hotel_name', $hotel_name);
         }
-
-        $hotel_name = \App\Hotel::find($id)->name;
-
-        return view('adminhoteldash')->with('orders', $orders)->with('hotel_name', $hotel_name);
+        else {
+            return redirect('/');
+        }
     }
 
     public function getOrderConfirm($id) {
-        if (\Auth::user()->is_admin == false) {
-            return redirect('/');
-        }
-
-        else {
+        if (\Auth::user()->is_admin == true) {
 
             $order = \App\Order::find($id);
 
@@ -100,6 +104,11 @@ class AdminController extends Controller
             $order->status = 'delivered';
 
             $order->save();
+
+            return redirect()->back();
+        }
+
+        else {
 
             return redirect()->back();
         }

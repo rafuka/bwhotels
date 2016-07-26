@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset='utf-8'>
+	<meta name="robots" content="noindex,nofollow"/>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" >
