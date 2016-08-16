@@ -61,10 +61,22 @@ class MainController extends Controller
     	$order->hotel()->associate(\Auth::user()->hotel);
     	
 
-    	$order->save();
+    	if ($order->save()) {
+            \Session::flash('flash_message', 'New Order placed successfully!');
 
-    	\Session::flash('flash_message', 'New Order placed successfully!');
+            $data = array(
+                'order' => $order
+                );
 
-    	return redirect('/');
+            \Mail::send('emails.orderemail', $data, function ($message) use ($order){
+              $message->to('rafuk89@gmail.com')
+                ->subject('New Order Placed');
+            });
+            
+            return redirect('/');
+        }
+        else {
+            abort(500, 'Error placing order');
+        }
     }
 }
