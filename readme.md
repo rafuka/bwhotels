@@ -9,4 +9,4 @@ To run the app locally:
 5. run `php artisan db:seed`
 6. Navigate to the `public` folder and run `php -S localhost:3030`
 7. Navigate to `localhost:3030` on your desired browser.
-8. User username `admin` and password `123456` to log in as an admin, or username `nancy` and password `123456` to log in as a normal user.
+8. Use username `admin` and password `123456` to log in as an admin, or username `nancy` and password `123456` to log in as a normal user.
